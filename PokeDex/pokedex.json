@@ -4,62 +4,62 @@
         "name": "Bulbasaur",
         "ability": "Overgrow",
         "movement": "Vine Whip",
-        "image_name": ""
+        "image_name": "1"
     },
     {
         "pokedex_number": 4,
         "name": "Charmander",
         "ability": "Blaze",
         "movement": "Flamethrower",
-        "image_name": ""
+        "image_name": "4"
     },
     {
         "pokedex_number": 7,
         "name": "Squirtle",
         "ability": "Torrent",
         "movement": "Water Gun",
-        "image_name": ""
+        "image_name": "7"
     },
     {
         "pokedex_number": 152,
         "name": "Chikorita",
         "ability": "Overgrow",
         "movement": "Razor Leaf",
-        "image_name": ""
+        "image_name": "152"
     },
     {
         "pokedex_number": 155,
         "name": "Cyndaquil",
         "ability": "Blaze",
         "movement": "Ember",
-        "image_name": ""
+        "image_name": "155"
     },
     {
         "pokedex_number": 158,
         "name": "Totodile",
         "ability": "Torrent",
         "movement": "Water Gun",
-        "image_name": ""
+        "image_name": "158"
     },
     {
         "pokedex_number": 252,
         "name": "Treecko",
         "ability": "Overgrow",
         "movement": "Pound",
-        "image_name": ""
+        "image_name": "252"
     },
     {
         "pokedex_number": 255,
         "name": "Torchic",
         "ability": "Blaze",
         "movement": "Peck",
-        "image_name": ""
+        "image_name": "255"
     },
     {
         "pokedex_number": 258,
         "name": "Mudkip",
         "ability": "Torrent",
         "movement": "Water Gun",
-        "image_name": ""
+        "image_name": "258"
     }
-]ß
+]

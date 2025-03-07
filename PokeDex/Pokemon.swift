@@ -8,9 +8,9 @@
 import Foundation
 
 struct Pokemon: Codable {
-    let pokedexNumber: Int
+    let pokedex_number: Int
     let name: String
     let ability: String
     let movement: String
-    let imageName: String
+    let image_name: String
 }
