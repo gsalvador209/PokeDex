@@ -18,10 +18,19 @@ class PokemonDetailViewController: UIViewController {
         return imageView
     }()
     
+    private let numberLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.font = UIFont.boldSystemFont(ofSize: 20)
+        label.textColor = .darkGray
+        return label
+    }()
+    
     private let nameLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.boldSystemFont(ofSize: 22)
+        label.textAlignment = .right
         return label
     }()
     
@@ -61,13 +70,14 @@ class PokemonDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
+        view.backgroundColor = .systemBackground
         setupLayout()
         configureView()
     }
     
     private func setupLayout() {
         view.addSubview(imageView)
+        view.addSubview(numberLabel)
         view.addSubview(nameLabel)
         view.addSubview(abilityLabel)
         view.addSubview(movementLabel)
@@ -76,8 +86,11 @@ class PokemonDetailViewController: UIViewController {
         NSLayoutConstraint.activate([
             imageView.topAnchor.constraint(equalTo: view.topAnchor, constant: 20),
             imageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            imageView.widthAnchor.constraint(equalToConstant: 120),
-            imageView.heightAnchor.constraint(equalToConstant: 120),
+            imageView.widthAnchor.constraint(equalToConstant: 240),
+            imageView.heightAnchor.constraint(equalToConstant: 240),
+            
+            numberLabel.trailingAnchor.constraint(equalTo: nameLabel.leadingAnchor,constant: -10),
+            numberLabel.bottomAnchor.constraint(equalTo: nameLabel.bottomAnchor),
             
             nameLabel.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 20),
             nameLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
@@ -88,13 +101,14 @@ class PokemonDetailViewController: UIViewController {
             movementLabel.topAnchor.constraint(equalTo: abilityLabel.bottomAnchor, constant: 10),
             movementLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             
-            closeButton.topAnchor.constraint(equalTo: movementLabel.bottomAnchor, constant: 20),
+            closeButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -5),
             closeButton.centerXAnchor.constraint(equalTo: view.centerXAnchor)
         ])
     }
     
     private func configureView() {
-        nameLabel.text = "\(pokemon.pokedex_number) - \(pokemon.name)"
+        nameLabel.text = "\(pokemon.name)"
+        numberLabel.text = "#\(String(format: "%03d",pokemon.pokedex_number))"
         abilityLabel.text = "Ability: \(pokemon.ability)"
         movementLabel.text = "Move: \(pokemon.movement)"
         imageView.image = UIImage(named: pokemon.image_name)
